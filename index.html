@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXO | Conectamos ideas, unimos talento</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Poppins:wght@300;400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#859399",
+                        "on-primary": "#003543",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "surface-bright": "#31394a",
+                        "primary": "#a4e6ff",
+                        "on-background": "#dae2f8",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#47d5c2",
+                        "on-secondary-fixed": "#00174b",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-secondary": "#002a78",
+                        "background": "#081120",
+                        "tertiary-fixed-dim": "#4fdbc8",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-tint": "#4cd6ff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#dae2f8",
+                        "tertiary-fixed": "#71f8e4",
+                        "on-tertiary-fixed": "#00201c",
+                        "on-surface": "#dae2f8",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#131c2b",
+                        "secondary": "#b4c5ff",
+                        "on-tertiary-container": "#00594f",
+                        "on-primary-fixed-variant": "#004e60",
+                        "surface-container-lowest": "#060e1d",
+                        "tertiary": "#6af2de",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary-container": "#0053db",
+                        "surface-container-highest": "#2c3545",
+                        "on-error": "#690005",
+                        "surface": "#081120",
+                        "inverse-primary": "#00677f",
+                        "surface-variant": "#2c3545",
+                        "surface-dim": "#081120",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-primary-container": "#00566a",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#283141",
+                        "surface-container": "#17202f",
+                        "primary-container": "#00d1ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-high": "#222a3a",
+                        "on-tertiary": "#003731",
+                        "primary-fixed": "#b7eaff",
+                        "outline-variant": "#3c494e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-md": "32px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "margin-lg": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "margin-sm": "16px",
+                        "stack-xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Poppins", "sans-serif"],
+                        "headline-lg": ["Poppins", "sans-serif"],
+                        "display-xl": ["Poppins", "sans-serif"],
+                        "headline-md": ["Poppins", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 15px rgba(0, 209, 255, 0.05);
+        }
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #a4e6ff 0%, #00d1ff 50%, #4fdbc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tech-lines {
+            background-image: 
+                linear-gradient(rgba(0, 209, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 209, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+        .glow-bulb-nexus {
+            box-shadow: 0 0 100px 30px rgba(0, 209, 255, 0.4);
+        }
+        .sticky-note-modern {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+        .sticky-note-modern:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0, 209, 255, 0.2);
+        }
+        .sticky-note-modern::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle at 30% 30%, #ff4d4d, #990000);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset -1px -1px 2px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .light-beam {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.4), transparent);
+            transform-origin: left center;
+            z-index: 5;
+            pointer-events: none;
+        }
+        @keyframes flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .animated-beam {
+            background-size: 200% 100%;
+            animation: flow 3s linear infinite;
+        }
+        .initiative-card-glow {
+            border: 1px solid rgba(164, 230, 255, 0.1);
+            box-shadow: 0 0 20px rgba(164, 230, 255, 0.03);
+            transition: all 0.5s ease;
+        }
+        .initiative-card-glow:hover {
+            border-color: rgba(164, 230, 255, 0.4);
+            box-shadow: 0 0 30px rgba(164, 230, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-lg h-20">
+<a class="flex items-center gap-2" href="index.html">
+<img alt="NEXO Logo" class="border-radius/30 rounded-[15px] bg-primary/10 border border-primary/30 h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvE2qV4G9H0YaTV9y7WRqENpjwTpv_GnlmXvFOd_Bltta4AMNfQFrK_KfQPntRdG1Hz6jfOBuf0b21AFSecQTK20DsP0DkDMWSdKllJs0eZ0R36WVknPar4UUvB1wr6wOXAE94OPmys9kRZ-ICQ783BicYqHAjHfSUMkgCDeEhNxe2y8Cva8im4pCIPTnJBHWfW4bGuEPAwsRB87CUTzJZ-5cOr9GBPTMh2u8CiJnekgQgVOouC33QBirAvdMcnRXksgld4Qu3C3Jw"/>
+
+</a>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-all duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="iniciativas.html">Initiatives</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="nosotros.html">About Us</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="contacto.html">Contact</a>
+</div>
+<button class="bg-primary/10 border border-primary/30 text-primary font-bold px-stack-lg py-stack-sm rounded-lg active:scale-95 transition-all hover:bg-primary hover:text-on-primary">
+                Sign In
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section with Background Image -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-margin-sm md:px-margin-lg">
+<!-- Background Image with Overlays -->
+<div class="absolute inset-0 z-0">
+<img alt="Futuristic Background" class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEYvJ5dnf_nqTsD3yI-9YWrOXdLzg2FumSzfUGKrZM-8poeUq5cYLlppbtWff82pwBrJTbCjJEJEtPaton78TtsFWdfYoxVnr2mp6tU9HdLMQH5EhM2998walYqAeDUZW9B8EaS0M8xxNGKi2ZkYCTPYAWNy7ZqZrW2MQXKJYpLJKmiNMNFY27UHiceVDTc6Nhpa0X56ZcGhL3Msch702iPUNX7ZxV8fTYZBUMgFB2zI9mqpXe3WSQ2U1b8D8ThS3nt1gQJgt2ec5Q"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/40 to-background"></div>
+<div class="absolute inset-0 bg-background/20 backdrop-brightness-75"></div>
+<div class="absolute inset-0 tech-lines opacity-30"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mt-[-5vh]">
+<span class="inline-block mb-stack-md px-stack-md py-stack-xs rounded-full bg-primary/20 text-primary font-bold font-label-sm text-label-sm border border-primary/30 backdrop-blur-md shadow-[0_0_20px_rgba(0,209,255,0.2)]">
+                    Plataforma de Colaboración Radical
+                </span>
+<h1 class="font-display-xl text-display-xl md:text-[92px] leading-[1.05] mb-stack-md text-white tracking-tight font-bold drop-shadow-2xl">
+                    Conectamos ideas, <br/><span class="hero-gradient-text">unimos talento</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white mb-margin-md max-w-2xl mx-auto drop-shadow-lg font-medium opacity-90">
+                    NEXO es el ecosistema inmersivo donde las mentes visionarias convergen para transformar proyectos ambiciosos en realidades de alto impacto.
+                </p>
+<div class="flex flex-col md:flex-row gap-stack-md justify-center items-center">
+<button class="group relative w-full md:w-auto px-margin-md py-stack-lg bg-primary-container text-on-primary-container font-bold rounded-xl shadow-[0_0_50px_rgba(0,209,255,0.35)] hover:shadow-[0_0_60px_rgba(0,209,255,0.5)] active:scale-95 transition-all overflow-hidden">
+<span class="relative z-10">Empezar una Iniciativa</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+</button>
+<button class="w-full md:w-auto px-margin-md py-stack-lg border border-white/40 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl backdrop-blur-md active:scale-95 transition-all shadow-xl">
+                        Explorar Proyectos
+                    </button>
+</div>
+</div>
+</section>
+<!-- Tablero de Ideas Section (The Heart) -->
+<section class="py-margin-lg px-margin-sm md:px-margin-lg bg-[#050b16] relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 tech-lines"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-margin-lg">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-sm font-bold">El Núcleo de la Innovación</h2>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-2xl mx-auto">Seis ejes fundamentales que impulsan nuestra comunidad colaborativa, interconectados por una visión compartida.</p>
+</div>
+<div class="relative min-h-[850px] flex items-center justify-center" id="nexus-board">
+<!-- Central Bulb with enhanced glow -->
+<div class="relative z-30 flex flex-col items-center">
+<div class="w-44 h-44 bg-background border-2 border-primary/60 rounded-full flex items-center justify-center glow-bulb-nexus animate-pulse group cursor-pointer transition-all duration-700">
+<span class="material-symbols-outlined text-[100px] text-primary group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+</span>
+<span class="mt-stack-lg font-bold text-primary tracking-[0.4em] text-label-sm drop-shadow-lg">NEXO CORE</span>
+</div>
+<!-- Orbiting Modern Sticky Notes - Repositioned to avoid overlap and increase spacing -->
+<div class="absolute inset-0">
+<!-- Education - Top Left -->
+<div class="sticky-note-modern absolute top-[5%] left-[18%] w-56 p-stack-lg bg-[#FFE082] text-black -rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="education">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">EDUCACIÓN</span>
+<p class="text-[13px] leading-tight font-medium">Proyectos que transforman el aprendizaje continuo y accesible.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">EDTECH</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">SKILLS</span>
+</div>
+</div>
+<!-- Tech - Top Right -->
+<div class="sticky-note-modern absolute top-[5%] right-[18%] w-56 p-stack-lg bg-[#C5E1A5] text-black rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="tech">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">TECNOLOGÍA</span>
+<p class="text-[13px] leading-tight font-medium">Innovación disruptiva y desarrollo sin límites técnicos.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">AI/WEB3</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">FUTURE</span>
+</div>
+</div>
+<!-- Creative - Middle Right -->
+<div class="sticky-note-modern absolute top-[45%] -translate-y-1/2 right-[5%] w-56 p-stack-lg bg-[#F48FB1] text-black rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="creative">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">CREATIVO</span>
+<p class="text-[13px] leading-tight font-medium">Arte, diseño y creatividad emocional que inspira al mundo.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">DESIGN</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">MEDIA</span>
+</div>
+</div>
+<!-- Entrepreneurship - Bottom Right -->
+<div class="sticky-note-modern absolute bottom-[5%] right-[18%] w-56 p-stack-lg bg-[#FFCC80] text-black -rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="entrepreneurship">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">EMPRENDIMIENTO</span>
+<p class="text-[13px] leading-tight font-medium">Iniciativas que impulsan nuevos modelos de negocios escalables.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">STARTUP</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">GROWTH</span>
+</div>
+</div>
+<!-- Sustainable - Bottom Left -->
+<div class="sticky-note-modern absolute bottom-[5%] left-[18%] w-56 p-stack-lg bg-[#90CAF9] text-black rotate-2 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="sustainable">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">SOSTENIBLE</span>
+<p class="text-[13px] leading-tight font-medium">Soluciones para un futuro más verde, circular y consciente.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">CLEANTECH</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">ESG</span>
+</div>
+</div>
+<!-- Social - Middle Left -->
+<div class="sticky-note-modern absolute top-[45%] -translate-y-1/2 left-[5%] w-56 p-stack-lg bg-[#CE93D8] text-black -rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer z-20" data-note="social">
+<span class="font-bold text-label-sm block mb-stack-sm border-b border-black/20 pb-1 uppercase tracking-tighter">SOCIAL</span>
+<p class="text-[13px] leading-tight font-medium">Ideas que generan impacto real y positivo en las comunidades.</p>
+<div class="mt-4 flex gap-1">
+<span class="px-3 py-0.5 bg-black/10 rounded text-[10px] font-bold">IMPACT</span>
+<span class="px-2 py-0.5 bg-black/10 rounded text-[10px] font-bold">EQUITY</span>
+</div>
+</div>
+</div>
+<!-- Connection Beams -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" id="connection-svg">
+<defs>
+<lineargradient id="beamGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:rgba(0, 209, 255, 0);stop-opacity:0"></stop>
+<stop offset="50%" style="stop-color:rgba(0, 209, 255, 0.8);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:rgba(0, 209, 255, 0);stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-margin-lg bg-background">
+<div class="max-w-container-max mx-auto px-margin-sm md:px-margin-lg">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-lg">
+<div class="glass-panel p-margin-md rounded-2xl text-center group hover:border-primary/40 transition-colors">
+<div class="font-display-xl text-primary mb-stack-xs group-hover:scale-110 transition-transform">150+</div>
+<div class="text-on-surface-variant font-label-sm uppercase tracking-widest text-[10px]">Iniciativas Activas</div>
+</div>
+<div class="glass-panel p-margin-md rounded-2xl text-center group hover:border-primary/40 transition-colors">
+<div class="font-display-xl text-primary mb-stack-xs group-hover:scale-110 transition-transform">2.4k</div>
+<div class="text-on-surface-variant font-label-sm uppercase tracking-widest text-[10px]">Colaboradores</div>
+</div>
+<div class="glass-panel p-margin-md rounded-2xl text-center group hover:border-primary/40 transition-colors">
+<div class="font-display-xl text-primary mb-stack-xs group-hover:scale-110 transition-transform">$12M</div>
+<div class="text-on-surface-variant font-label-sm uppercase tracking-widest text-[10px]">Capital Recaudado</div>
+</div>
+<div class="glass-panel p-margin-md rounded-2xl text-center group hover:border-primary/40 transition-colors">
+<div class="font-display-xl text-primary mb-stack-xs group-hover:scale-110 transition-transform">94%</div>
+<div class="text-on-surface-variant font-label-sm uppercase tracking-widest text-[10px]">Éxito de Lanzamiento</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Initiatives Section -->
+<section class="py-margin-lg px-margin-sm md:px-margin-lg relative">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-margin-lg gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-sm font-bold">Iniciativas Destacadas</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Los paneles tecnológicos más avanzados que buscan talento disruptivo.</p>
+</div>
+<a class="flex items-center gap-stack-sm text-primary font-bold hover:gap-stack-md transition-all group" href="#">
+<span class="">Ver todas las iniciativas</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg" id="grid-tarjetas">
+<!-- Initiative Card 1 -->
+<article class="glass-panel initiative-card-glow rounded-2xl overflow-hidden group hover:bg-white/10 transition-all duration-500" data-id="1">
+<div class="h-52 relative overflow-hidden">
+<img alt="EcoGrid Urban" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP5hdfaWHi1MarNFVEOtRyB8aM__X4Mowex7u5Ij0gqNR1CsMQkkSRVpaUvOjtSOnOY3qDbru5iHbmzQum8nDTfYsO8MVBEHWn-APwUQ0KgpguL5Nm1SXcNfRfMyl8WhZtdxkRlkeeXUWPBHFL5fAduiCbR6-DmN_KBWbnkUFlXahgp05uKozshOwd5mIwAGtUyc7hReIIQ_xUNP4Ok0jxKe6OzhfWOp2MkDzN0ZLlqXkCFEf5_PDrDPL34leOdPzx9hFuRbSc-CRt"/>
+<div class="absolute top-4 left-4 bg-primary/30 backdrop-blur-xl px-stack-md py-stack-xs rounded-full border border-primary/40 text-primary font-bold text-[10px] tracking-widest uppercase">Sostenible</div>
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="p-stack-lg relative -mt-6 z-10">
+<h3 class="font-headline-md text-headline-md text-white mb-2 font-bold group-hover:text-primary transition-colors">EcoGrid Urban</h3>
+<p class="text-on-surface-variant font-body-md text-[14px] leading-relaxed mb-6 line-clamp-2">Infraestructura inteligente de energía compartida para distritos urbanos de alta densidad.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">IoT</span>
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">Solar</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Perfiles Buscados:</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-background bg-surface-container-high overflow-hidden"><img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Nlk8ADuzukh5OajKG-bwGOAShi5wg3d8f3a9nHYFcZZ4UGCMhQlgRXv52lCb16i35zfMoXcGWW_hDXDZ0QwH-VC7h8U5wSeFzToHBQ-s8_mpdOJQpY5STVuPQdhYlVq9l4OWd5GHhhTjjfBG1VGuepmqV9ZKXnPHZdoFFn75yyvOheEhJE3yjGO0ErwEpM5-uPBCBg7wKFdXbkc4BwjalR2c48syoieGxle-0NOgrsRFMaFLl2yn8z-he2elVEim7WHqD2y0-01t"/></div>
+<div class="w-6 h-6 rounded-full border border-background bg-primary/20 text-[8px] flex items-center justify-center text-primary font-bold">+4</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span class="">Estado: Beta Pública</span>
+<span class="">85%</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%] shadow-[0_0_10px_rgba(0,209,255,0.8)]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Initiative Card 2 -->
+<article class="glass-panel initiative-card-glow rounded-2xl overflow-hidden group hover:bg-white/10 transition-all duration-500" data-id="2">
+<div class="h-52 relative overflow-hidden">
+<img alt="NeuralSync V2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNUWGInKvDwZdw_FlpopM_yFpfzHP2xjQttA5G8JJ038fMtYyG42Wk-X59io_v6mEiTn6bA7fKjcYWnBu3M6O9S5DHV3BiNCQ25xLwHgFjJudlsbMgvVacbabcORPV3WxdqTvAdaTz5rjpLeiEc36--t4aMkB4LnMkWx0wrK5W6ao1Y9p4y6NTRg3rws23a35hV4cGTZT5zX3CR4Wy0GeaOmQf9mvexdd5qvQsZXXb04r9o1PmGFpYGTo98tduJUI7B9a9YrTEXpkg"/>
+<div class="absolute top-4 left-4 bg-tertiary-container/30 backdrop-blur-xl px-stack-md py-stack-xs rounded-full border border-tertiary/40 text-tertiary font-bold text-[10px] tracking-widest uppercase">Tecnología</div>
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="p-stack-lg relative -mt-6 z-10">
+<h3 class="font-headline-md text-headline-md text-white mb-2 font-bold group-hover:text-primary transition-colors">NeuralSync V2</h3>
+<p class="text-on-surface-variant font-body-md text-[14px] leading-relaxed mb-6 line-clamp-2">Interfaz cerebro-máquina de código abierto para aplicaciones de accesibilidad motriz.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">Neural</span>
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">OpenSource</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Perfiles Buscados:</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-background bg-surface-container-high overflow-hidden"><img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfZKo8hC7kpNaXhmb21OWA5mQONamwtLraOcZ4OyrMn3RXZZ_nCA-A6Q0lBs5RzIgn_L9wJqvgwUd_V04qvZjQUmrDeMjzIiOwMyHK_jEJ4Og2EENeav_uY_2vdCFAmcrBTsi7KfSsFbLdbHsNnKvTP8-GnbSbka_PV5sRm9K4xs_BZpuOxwv6R1XwcINbFT1UtAA6YCv7c7Haoz2eFP-G20tYsENVuZplqlRjHIXBbw96NUQBz3ICnEBcu3oyZS0jP_JsZdxYgwpo"/></div>
+<div class="w-6 h-6 rounded-full border border-background bg-primary/20 text-[8px] flex items-center justify-center text-primary font-bold">+12</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span class="">Estado: I+D</span>
+<span class="">42%</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[42%] shadow-[0_0_10px_rgba(0,209,255,0.8)]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Initiative Card 3 -->
+<article class="glass-panel initiative-card-glow rounded-2xl overflow-hidden group hover:bg-white/10 transition-all duration-500" data-id="3">
+<div class="h-52 relative overflow-hidden">
+<img alt="Vortex Canvas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1fe-mUT9cJ-xO3zlQoX_yWOAJdO21-OGpwZFicAFx_YaVXXRxpF_u47gXdZkPUvR4SgSgpWqqqWpi0_8wNeO0Z61n53qfy-N4dQ7oLWpY-prX-qVxNwUssyOy5vlFqXfsCwNIVuDRuICMuHZJG4x6ptIHZ2qU0HjjXPVnOdeiRxkOyHvfk6dEQr__I3i48G9Mmj8C5T1DAwugFCxdpV6BRoZJGgsNhEJh_hilSGf5XCe4hp8jWBGfz_pZH64iBSsDjk1-DF-WAFTN"/>
+<div class="absolute top-4 left-4 bg-secondary/30 backdrop-blur-xl px-stack-md py-stack-xs rounded-full border border-secondary/40 text-secondary font-bold text-[10px] tracking-widest uppercase">Creativo</div>
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="p-stack-lg relative -mt-6 z-10">
+<h3 class="font-headline-md text-headline-md text-white mb-2 font-bold group-hover:text-primary transition-colors">Vortex Canvas</h3>
+<p class="text-on-surface-variant font-body-md text-[14px] leading-relaxed mb-6 line-clamp-2">Mercado descentralizado para la co-creación y propiedad compartida de arte generativo.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">Generative</span>
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-on-surface-variant">NFT</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Perfiles Buscados:</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-background bg-surface-container-high overflow-hidden"><img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2fmoFqm2oGF0KP2wOSZQHyD9kIY__KUK2dvhN1Rsj0TQx3ptzrtyMOtuNcnUn5gWj_DH-36e4UOosuNn1E91EAwP45go11p3dDSpiEsiIeXIBZbEIkZ9eRvozB6PHGiQpNkirGA9kBm-SbKyRn955YuDxNNVAU_kdQ3CKoUZNEJI_OE-Spnknc5n7OxOmJ_12Db8gd_Mz_2JvtG3oo9ciUHXdAprCVoxqvkiOjeEkjM0rnfRsBqb2G4f3Th_Kria_psKjWrVgQBO"/></div>
+<div class="w-6 h-6 rounded-full border border-background bg-primary/20 text-[8px] flex items-center justify-center text-primary font-bold">+8</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span class="">Estado: Lanzamiento</span>
+<span class="">68%</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[68%] shadow-[0_0_10px_rgba(0,209,255,0.8)]"></div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-margin-lg px-margin-sm md:px-margin-lg">
+<div class="max-w-container-max mx-auto glass-panel rounded-3xl p-margin-md md:p-margin-lg text-center relative overflow-hidden group">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full group-hover:bg-primary/20 transition-colors duration-1000"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-md font-bold">¿Listo para construir el futuro?</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-margin-md max-w-xl mx-auto">Únete a la red global de colaboradores más influyente y comienza a trabajar en proyectos que importan.</p>
+<div class="flex flex-col sm:flex-row gap-stack-md justify-center">
+<input class="px-stack-lg py-stack-lg bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-white sm:min-w-[350px] placeholder:text-on-surface-variant/50" placeholder="Tu correo electrónico profesional" type="email"/>
+<button class="px-margin-md py-stack-lg bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-all shadow-[0_0_30px_rgba(0,209,255,0.2)] hover:shadow-[0_0_40px_rgba(0,209,255,0.4)]">
+                            Únete Ahora
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-margin-lg border-t border-white/5 bg-[#050b16]">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-lg gap-stack-md">
+<a class="flex items-center gap-2" href="index.html">
+<img alt="NEXO Logo" class="border-radius/30 rounded-[15px] bg-primary/10 border border-primary/30 h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvE2qV4G9H0YaTV9y7WRqENpjwTpv_GnlmXvFOd_Bltta4AMNfQFrK_KfQPntRdG1Hz6jfOBuf0b21AFSecQTK20DsP0DkDMWSdKllJs0eZ0R36WVknPar4UUvB1wr6wOXAE94OPmys9kRZ-ICQ783BicYqHAjHfSUMkgCDeEhNxe2y8Cva8im4pCIPTnJBHWfW4bGuEPAwsRB87CUTzJZ-5cOr9GBPTMh2u8CiJnekgQgVOouC33QBirAvdMcnRXksgld4Qu3C3Jw"/>
+</a>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2024 NEXO Collaborative. Engineered for innovation.</p>
+<div class="flex gap-stack-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Network</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav for Mobile -->
+<nav class="md:hidden fixed bottom-0 w-full bg-background/80 backdrop-blur-xl border-t border-white/5 px-stack-lg py-stack-sm flex justify-around items-center z-50">
+<a class="flex flex-col items-center text-primary" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] mt-1 font-medium">Inicio</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="text-[10px] mt-1">Proyectos</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] mt-1">Nosotros</span>
+</a>
+</nav>
+<script>
+        // Logic to draw connection beams in the Nexus Board
+        function drawConnections() {
+            const svg = document.getElementById('connection-svg');
+            const board = document.getElementById('nexus-board');
+            const bulb = board.querySelector('.glow-bulb-nexus');
+            const notes = board.querySelectorAll('.sticky-note-modern');
+            
+            // Clear existing paths except definitions
+            const defs = svg.querySelector('defs');
+            svg.innerHTML = '';
+            svg.appendChild(defs);
+
+            const boardRect = board.getBoundingClientRect();
+            const bulbRect = bulb.getBoundingClientRect();
+            
+            const startX = (bulbRect.left + bulbRect.width / 2) - boardRect.left;
+            const startY = (bulbRect.top + bulbRect.height / 2) - boardRect.top;
+
+            notes.forEach(note => {
+                const noteRect = note.getBoundingClientRect();
+                const endX = (noteRect.left + noteRect.width / 2) - boardRect.left;
+                const endY = (noteRect.top + noteRect.height / 2) - boardRect.top;
+
+                // Adjust the end point slightly to meet the red "pin" of the note
+                const pinOffsetX = 0;
+                const pinOffsetY = -noteRect.height / 2 + 5; 
+
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const d = `M ${startX} ${startY} L ${endX + pinOffsetX} ${endY + pinOffsetY}`;
+                path.setAttribute('d', d);
+                path.setAttribute('stroke', 'url(#beamGradient)');
+                path.setAttribute('stroke-width', '2');
+                path.setAttribute('fill', 'none');
+                path.classList.add('animated-beam');
+                svg.appendChild(path);
+            });
+        }
+
+        // Initialize connections on load and resize
+        window.addEventListener('load', () => {
+            setTimeout(drawConnections, 100); // Small delay to ensure layout is ready
+        });
+        window.addEventListener('resize', drawConnections);
+
+        // Optimized floating animation for orbit cards (Sticky notes)
+        const cards = document.querySelectorAll('.sticky-note-modern');
+        cards.forEach((card, index) => {
+            const rotationBase = index % 2 === 0 ? -3 : 3;
+            const delay = index * 400;
+            
+            card.animate([
+                { transform: `translateY(0px) rotate(${rotationBase}deg)` },
+                { transform: `translateY(-20px) rotate(${rotationBase + (index % 2 === 0 ? 1.5 : -1.5)}deg)` },
+                { transform: `translateY(0px) rotate(${rotationBase}deg)` }
+            ], {
+                duration: 5000 + (index * 800),
+                iterations: Infinity,
+                easing: 'ease-in-out',
+                delay: delay
+            });
+
+            // Re-draw connections while animating if they were dynamic, 
+            // but since they are drawn to current positions, we don't need a loop for performance.
+            // Just ensuring they start at the right spot.
+        });
+    </script>
+</body></html>

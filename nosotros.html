@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nosotros | NEXO Collaborative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#859399",
+                        "on-primary": "#003543",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "surface-bright": "#31394a",
+                        "primary": "#a4e6ff",
+                        "on-background": "#dae2f8",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#47d5c2",
+                        "on-secondary-fixed": "#00174b",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-secondary": "#002a78",
+                        "background": "#0a1322",
+                        "tertiary-fixed-dim": "#4fdbc8",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-tint": "#4cd6ff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#dae2f8",
+                        "tertiary-fixed": "#71f8e4",
+                        "on-tertiary-fixed": "#00201c",
+                        "on-surface": "#dae2f8",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#131c2b",
+                        "secondary": "#b4c5ff",
+                        "on-tertiary-container": "#00594f",
+                        "on-primary-fixed-variant": "#004e60",
+                        "surface-container-lowest": "#060e1d",
+                        "tertiary": "#6af2de",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary-container": "#0053db",
+                        "surface-container-highest": "#2c3545",
+                        "on-error": "#690005",
+                        "surface": "#0a1322",
+                        "inverse-primary": "#00677f",
+                        "surface-variant": "#2c3545",
+                        "surface-dim": "#0a1322",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-primary-container": "#00566a",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#283141",
+                        "surface-container": "#17202f",
+                        "primary-container": "#00d1ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-high": "#222a3a",
+                        "on-tertiary": "#003731",
+                        "primary-fixed": "#b7eaff",
+                        "outline-variant": "#3c494e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-md": "32px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "margin-lg": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "margin-sm": "16px",
+                        "stack-xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "code-xs": ["monospace"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "code-xs": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(10, 19, 34, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glow-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(76, 214, 255, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 209, 255, 0.15);
+        }
+        .icon-glow {
+            filter: drop-shadow(0 0 12px currentColor);
+        }
+        .team-card-inner {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .group:hover .team-card-inner {
+            transform: scale(1.02);
+        }
+        .bg-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(0, 209, 255, 0.05) 0, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(106, 242, 222, 0.05) 0, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container bg-mesh min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-lg h-20">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">NEXO</div>
+<!-- Desktop Nav -->
+<ul class="hidden md:flex gap-margin-md items-center font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="index.html">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="productos.html">Initiatives</a></li>
+<li><a class="text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="nosotros.html">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="contacto.html">Contact</a></li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-bold active:scale-95 transition-all hover:shadow-[0_0_20px_rgba(164,230,255,0.4)]">
+            Sign In
+        </button>
+</nav>
+</header>
+<main class="pt-40 pb-margin-lg">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-lg mb-margin-lg text-center relative">
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 blur-[120px] -z-10 rounded-full"></div>
+<h1 class="font-display-xl text-display-xl mb-stack-md bg-gradient-to-b from-on-surface via-primary to-primary-fixed-dim bg-clip-text text-transparent">
+            El Corazón del Futuro Colectivo
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+            NEXO no es solo una plataforma; es un ecosistema vivo donde la pasión humana y la excelencia técnica convergen para resolver los desafíos más ambiciosos del mañana.
+        </p>
+</section>
+<!-- Mission, Vision, Values -->
+<section class="max-w-container-max mx-auto px-margin-lg mb-40">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Mission -->
+<article class="glow-card p-margin-md rounded-2xl flex flex-col group h-full">
+<div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-stack-lg border border-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined text-3xl icon-glow">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Nuestra Misión</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed flex-grow">
+                    Democratizar el acceso a la tecnología facilitando un entorno donde las ideas disruptivas encuentren el talento necesario para florecer sin límites geográficos ni barreras sociales.
+                </p>
+</article>
+<!-- Vision -->
+<article class="glow-card p-margin-md rounded-2xl flex flex-col group h-full">
+<div class="w-14 h-14 rounded-xl bg-tertiary/5 flex items-center justify-center mb-stack-lg border border-tertiary/10 text-tertiary transition-all group-hover:bg-tertiary group-hover:text-on-tertiary">
+<span class="material-symbols-outlined text-3xl icon-glow">diversity_1</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Nuestra Visión</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed flex-grow">
+                    Consolidarnos como el epicentro de la innovación colaborativa en Latinoamérica, transformando la manera en que el mundo percibe el desarrollo tecnológico desde el sur.
+                </p>
+</article>
+<!-- Values -->
+<article class="glow-card p-margin-md rounded-2xl flex flex-col group h-full">
+<div class="w-14 h-14 rounded-xl bg-secondary/5 flex items-center justify-center mb-stack-lg border border-secondary/10 text-secondary transition-all group-hover:bg-secondary group-hover:text-on-secondary">
+<span class="material-symbols-outlined text-3xl icon-glow">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Valores</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed flex-grow">
+                    Nuestra brújula es la transparencia radical, la empatía tecnológica y el compromiso inquebrantable con el impacto positivo y la calidad de código.
+                </p>
+</article>
+</div>
+</section>
+<!-- Team Section -->
+<section class="max-w-container-max mx-auto px-margin-lg">
+<header class="mb-margin-lg text-center md:text-left">
+<span class="text-primary font-label-sm uppercase tracking-widest block mb-2">Pioneros de la Colaboración</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Arquitectos de la Visión</h2>
+<div class="h-1 w-20 bg-primary/30 rounded-full mt-4 mx-auto md:mx-0 overflow-hidden">
+<div class="h-full w-1/2 bg-primary"></div>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Member 1 -->
+<article class="group relative">
+<div class="team-card-inner glow-card p-6 rounded-3xl overflow-hidden h-full flex flex-col">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-full h-full rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center text-6xl shadow-inner z-10">
+                            👨‍💻
+                        </div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 bg-primary rounded-full border-4 border-background z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xs font-bold">code</span>
+</div>
+</div>
+<div class="text-center flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-primary transition-colors">Luis Carlos Cadena</h4>
+<p class="text-primary font-label-sm uppercase tracking-widest mb-4">Desarrollador Fullstack</p>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-3">
+                            Maestro de la arquitectura backend y guardian de los datos. Apasionado por escalar ideas complejas.
+                        </p>
+</div>
+<div class="flex justify-center gap-4 mt-auto pt-4 border-t border-white/5">
+<a class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="GitHub" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh_Kaj0kXvV6Mst6NM778clZ8AuPIni8lLPYntRHkFXSFc_cihrsNM11ulNq_MPueE1d1vCaBuOF4JqnTkiWxvgPT3CLYTKDoyQYY-ridW6O2p8USFIZY55uOEVuE03es313b-hTBTa4RhrMQYUCrszW-hjNYCBhBfyAkFNWGTWy9r8DckKgSavehLmzdOa8P4H6guNNKqu686TunkYFHb8X245xOm1251FWw2gNbCvAKa7gDRCoqN8OitNR5Cc1rJEtYcMpeZDMpy"/>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLIIFuxuShyPLd_Nwr6B0KFfOchFIBIN5f3CYbnCVDTvaKYjNBKSxMzG2XFsfh3IQULFniOjRKnDy_sToa61K18ptR6fycd20EqWFlCBbugxDlcu3MZdLpe3yKCrLicWEl48zfuhjEaK8Dyx4z3VNQdWx0K3814Bd3itaL5bGbrBAnL8yJeep2pWC8uzrvGicz_G5MPV6iprsv52revNGqHhbhrGNcQloGjZDzo-IReIH4C0pV_qC05nKTKGE3rBDolA_0t_wCJTde"/>
+</a>
+</div>
+</div>
+</article>
+<!-- Member 2 -->
+<article class="group relative">
+<div class="team-card-inner glow-card p-6 rounded-3xl h-full flex flex-col">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-tertiary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-full h-full rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center text-6xl shadow-inner z-10">
+                            👩‍🎨
+                        </div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 bg-tertiary rounded-full border-4 border-background z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary text-xs font-bold">palette</span>
+</div>
+</div>
+<div class="text-center flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-tertiary transition-colors">Sofia Velásquez</h4>
+<p class="text-tertiary font-label-sm uppercase tracking-widest mb-4">UI/UX Designer</p>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-3">
+                            Convirtiendo el caos en armonía visual. Diseña experiencias que se sienten como el futuro hoy mismo.
+                        </p>
+</div>
+<div class="flex justify-center gap-4 mt-auto pt-4 border-t border-white/5">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="GitHub" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOHR1y4wjFiCaKy8iqIeXF78Dd1Lbx3piA4vr1tfatpV3A3w3u6tr74brhjrreFZq0nkbOmogfAfEq1FimDcQkGrm3UFYFt22mBH1n3Ettaef7-_GRQU-1AYjth44Ete9pRWxtKpVO8ujOT_-A5bGidl0AfagXOp0ReEVpOEbHc6KSKvbxA6BCwAQdpF_v9Z7_O8zC_zdKUs_9jGnA8XUQ9Z-jiRmMoS3o8H2IdKHoTc02T3BSfskhxZMPIxFWin2gooTSVNUhNmyw"/>
+</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Bas2PkHUJfrxfX_igqlS4GOsyvWgYVCWNUWynFUy9vZKYEFPMuhTAf-3z3jklKW_YfNjfWdR4b7KZ-ybpW6v9iyMJfbsLr7sqOq-7iBnn6PnHD0x1qTDbHLmoJb0hgyu9Dll9r0AU57I-Y7BV3M58DjeScMDiOx0zSRbrqufHgNbb_kWb79-ED0EcBxOgQJsn9RjtaqKwsRhMvKYHhb2AGosxb9GXvj6hphpKXi-Zxe0u_C20PVsRhQpmdB79l3L5xsPv3T7pjbR"/>
+</a>
+</div>
+</div>
+</article>
+<!-- Member 3 -->
+<article class="group relative">
+<div class="team-card-inner glow-card p-6 rounded-3xl h-full flex flex-col">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-secondary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-full h-full rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center text-6xl shadow-inner z-10">
+                            🚀
+                        </div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 bg-secondary rounded-full border-4 border-background z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary text-xs font-bold">bolt</span>
+</div>
+</div>
+<div class="text-center flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">Andrés Morales</h4>
+<p class="text-secondary font-label-sm uppercase tracking-widest mb-4">Project Manager</p>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-3">
+                            Catalizador de sinergias. Elimina obstáculos para que la innovación fluya a la velocidad de la luz.
+                        </p>
+</div>
+<div class="flex justify-center gap-4 mt-auto pt-4 border-t border-white/5">
+<a class="text-on-surface-variant hover:text-secondary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="GitHub" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMce0TXdNx6QDIG3JwsQPshrDy9DPNaYvM0sMfrtmeczmQOm4CALX6SFc02uvx8finVNhE_ha05KC4PFlv0bSn2AuRsWDUhBR7w2ithNCi7lQo8my3xIhmpzjcUiJOTgUYnQrQNX4ap6qe-5fTjqtUM3uHpQqCJWEUHMSrMl4ADnJe6j6F7rwOL3xGU29XcSosmKn2OipNi-1D-V_o4U31kAlvKRn-rT5QgMdiaiRLCJXVluQ2qWCyEEkb5P37U3F1j0KhMMAOqA-o"/>
+</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh_o9sq9eL-l--aizG5huUMvgMr841mbmAK9W5MYs6MACm6Bd_f7RMPjyHlXA0TMcmZysisKRtIax6bYklEuLMSpXPLMRW_7qIgRPIotW1uxq-sB7XKjOC5PdHu3-2BlTP-cm1n5kWuYpGOWnkZdnIgBh0xYUzjc9k1t3w2TlNxrze7jA04szidJXLrNw9o2HwrW0vRYU-8Uq__cbID0zElh3y4XxEBVaX05CJgFHSBIPdR9bX1Zv-0DDdgT5EXwSUaxglvnUhIF34"/>
+</a>
+</div>
+</div>
+</article>
+<!-- Member 4 -->
+<article class="group relative">
+<div class="team-card-inner glow-card p-6 rounded-3xl h-full flex flex-col">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-primary-fixed-dim/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-full h-full rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center text-6xl shadow-inner z-10">
+                            🛠️
+                        </div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 bg-primary-fixed-dim rounded-full border-4 border-background z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-xs font-bold">cloud</span>
+</div>
+</div>
+<div class="text-center flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-primary-fixed-dim transition-colors">Elena Ríos</h4>
+<p class="text-primary-fixed-dim font-label-sm uppercase tracking-widest mb-4">Cloud Engineer</p>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-3">
+                            Constructora de infraestructuras indestructibles. Garantiza que NEXO sea un sistema siempre resiliente.
+                        </p>
+</div>
+<div class="flex justify-center gap-4 mt-auto pt-4 border-t border-white/5">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="GitHub" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByQv3oQzryrg2IorSoBcsX78lYnLxrJ9jJ5mTd5fXzZQ2WAvyJ5viRPb3kCmmyYOSCZpZa18jAF1pLNSkLykNeufndgSPnGXTENmBTuRAAI5qiCPrCKULHPhXrs4xpdFFi_DzruU_SrN418Wtsha_YYxSJmcSI_WWURqSWIrVGCa9vjnVBRvJht33kN97AYCAHC5dzE5l2kzYTzzU2b7Sj_pY24pRcHnn3NlesQBnhCVLnwZdLZh_JoyWDYLgJAoAbWrbDD0RDBp9e"/>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-white/5" href="#">
+<img alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDcDMYTLPjuTgun1OY7rKfb7WTDSQj3l-YFKXcE-oIqa_jPy2rM0NiHvuQqiVAfs1RBI6GbLmf9JIc52npE6R8rVDzr_ZIinTSxq8jPD4iis1oEEQU3N3o0B20cTyueFpBkxK95v76rsOjy0LGiflCy8iqgdtXTYseauDif3ljVIcOBVVRbDxyO0FYUTbcAZe5OwQxtfd0jpdIOu2RKqbzM641lsBBtJXzAuL7WdUA28FjIoBQ-AlgQh_m_4YEWgY-gI3E3-jUbUWg"/>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-surface-container-lowest/80 backdrop-blur-md border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-lg gap-10">
+<div class="flex flex-col gap-2">
+<div class="font-headline-md text-headline-md font-bold text-primary">NEXO</div>
+<p class="text-on-surface-variant font-label-sm">© 2024 NEXO Collaborative. Designed for human inspiration.</p>
+</div>
+<div class="flex gap-margin-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm" href="#">Network</a>
+</div>
+<div class="flex gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors p-2 rounded-lg bg-white/5">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors p-2 rounded-lg bg-white/5">terminal</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors p-2 rounded-lg bg-white/5">hub</span>
+</div>
+</div>
+</footer>
+<script>
+    // Parallax effect for cards based on mouse movement
+    document.querySelectorAll('.glow-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) translateY(0) rotateX(0) rotateY(0)';
+        });
+    });
+</script>
+</body></html>

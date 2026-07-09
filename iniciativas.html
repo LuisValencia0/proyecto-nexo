@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Iniciativas | NEXO Collaborative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#859399",
+                        "on-primary": "#003543",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "surface-bright": "#31394a",
+                        "primary": "#a4e6ff",
+                        "on-background": "#dae2f8",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#47d5c2",
+                        "on-secondary-fixed": "#00174b",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-secondary": "#002a78",
+                        "background": "#081120",
+                        "tertiary-fixed-dim": "#4fdbc8",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-tint": "#4cd6ff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#dae2f8",
+                        "tertiary-fixed": "#71f8e4",
+                        "on-tertiary-fixed": "#00201c",
+                        "on-surface": "#dae2f8",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#131c2b",
+                        "secondary": "#b4c5ff",
+                        "on-tertiary-container": "#00594f",
+                        "on-primary-fixed-variant": "#004e60",
+                        "surface-container-lowest": "#060e1d",
+                        "tertiary": "#6af2de",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary-container": "#0053db",
+                        "surface-container-highest": "#2c3545",
+                        "on-error": "#690005",
+                        "surface": "#0a1322",
+                        "inverse-primary": "#00677f",
+                        "surface-variant": "#2c3545",
+                        "surface-dim": "#0a1322",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-primary-container": "#00566a",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#283141",
+                        "surface-container": "#17202f",
+                        "primary-container": "#00d1ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-high": "#222a3a",
+                        "on-tertiary": "#003731",
+                        "primary-fixed": "#b7eaff",
+                        "outline-variant": "#3c494e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-md": "32px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "margin-lg": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "margin-sm": "16px",
+                        "stack-xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "code-xs": ["monospace"],
+                        "headline-lg-mobile": ["Poppins", "sans-serif"],
+                        "headline-lg": ["Poppins", "sans-serif"],
+                        "display-xl": ["Poppins", "sans-serif"],
+                        "headline-md": ["Poppins", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .tech-note {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4cd6ff, transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tech-note:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(76, 214, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(76, 214, 255, 0.1);
+        }
+        .tech-note:hover::before {
+            opacity: 1;
+        }
+        .glow-button {
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-button:hover {
+            background: rgba(76, 214, 255, 0.1);
+            border-color: #4cd6ff;
+            box-shadow: 0 0 15px rgba(76, 214, 255, 0.3);
+            color: #a4e6ff;
+        }
+        .glow-button.active {
+            background: rgba(76, 214, 255, 0.2);
+            border-color: #4cd6ff;
+            box-shadow: 0 0 20px rgba(76, 214, 255, 0.4);
+            color: #a4e6ff;
+        }
+        .digital-grid {
+            background-image: radial-gradient(rgba(76, 214, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .status-pill {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden digital-grid">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-lg h-20">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">hub</span>
+                NEXO
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-2 px-4" href="index.html">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md px-4" href="iniciativas.html">Initiatives</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-2 px-4" href="nosotros.html">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-2 px-4" href="contacto.html">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-bold py-2.5 px-8 rounded-full hover:shadow-[0_0_20px_rgba(164,230,255,0.4)] transition-all">Sign In</button>
+<button class="md:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-32 pb-margin-lg px-margin-md md:px-margin-lg max-w-container-max mx-auto">
+<!-- Page Header -->
+<header class="mb-margin-lg max-w-4xl relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"></div>
+<h1 class="font-display-xl text-display-xl text-white mb-stack-md leading-tight">
+                Ecosistema de <span class="text-primary-fixed-dim">Iniciativas</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Nodos colaborativos en constante evolución. Conéctate con proyectos que están redibujando los límites de lo posible.
+            </p>
+</header>
+<!-- Filters Section -->
+<section class="mb-margin-lg">
+<div class="flex flex-wrap gap-stack-sm" id="category-filters">
+<button class="glow-button active px-6 py-2 rounded-lg text-label-sm">Todas</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Educación</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Tecnología</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Social</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Creativo</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Sostenible</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Emprendimiento</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Salud</button>
+<button class="glow-button px-6 py-2 rounded-lg text-label-sm">Ambiental</button>
+</div>
+</section>
+<!-- Initiatives Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-tarjetas">
+<!-- Card 1 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Tecnología">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-primary-fixed-dim font-bold uppercase tracking-widest mb-1 block">Tecnología</span>
+<h3 class="font-headline-md text-white">AgroTech</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">sensors</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Sistema inteligente para monitoreo de cultivos usando sensores IoT y análisis predictivo basado en Python.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-primary text-[10px] font-medium uppercase">React</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-primary text-[10px] font-medium uppercase">IoT</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-primary text-[10px] font-medium uppercase">Python</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">IoT Eng, Backend Dev</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-[10px] font-bold text-on-primary">LC</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Luis Cadena</span>
+</div>
+</div>
+<span class="status-pill bg-tertiary-container/20 text-tertiary">Abierto</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Ambiental">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1 block">Ambiental</span>
+<h3 class="font-headline-md text-white">EcoMapp</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-[20px]">location_on</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Plataforma colaborativa para geolocalizar puntos de reciclaje y centros de acopio en tiempo real.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-secondary text-[10px] font-medium uppercase">Maps API</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-secondary text-[10px] font-medium uppercase">Node.js</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">Mobile Dev, UX/UI</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-purple-600 flex items-center justify-center text-[10px] font-bold text-on-secondary">MG</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Maria Gomez</span>
+</div>
+</div>
+<span class="status-pill bg-primary-container/20 text-primary">En desarrollo</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Educación">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-tertiary font-bold uppercase tracking-widest mb-1 block">Educación</span>
+<h3 class="font-headline-md text-white">EduVR</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-[20px]">view_in_ar</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Herramienta de aprendizaje inmersivo para historia universal utilizando realidad virtual accesible.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-tertiary text-[10px] font-medium uppercase">Unity</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-tertiary text-[10px] font-medium uppercase">C#</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">3D Artist</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-tertiary to-emerald-600 flex items-center justify-center text-[10px] font-bold text-on-tertiary">NT</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Nexus Team</span>
+</div>
+</div>
+<span class="status-pill bg-tertiary-container/20 text-tertiary">Abierto</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Salud">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1 block">Salud</span>
+<h3 class="font-headline-md text-white">HealthSync</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[20px]">health_and_safety</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Protocolo de interoperabilidad de datos médicos descentralizado para clínicas rurales.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-primary text-[10px] font-medium uppercase">Web3</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-primary text-[10px] font-medium uppercase">Solidity</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">Security Expert</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-cyan-700 flex items-center justify-center text-[10px] font-bold text-on-primary">AR</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Ana Rivas</span>
+</div>
+</div>
+<span class="status-pill bg-error-container/20 text-error">Cerrado</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Creativo">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1 block">Creativo</span>
+<h3 class="font-headline-md text-white">ArtFlow</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-[20px]">brush</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Red social para artistas digitales que permite la co-creación de lienzos masivos en tiempo real.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-secondary text-[10px] font-medium uppercase">Canvas</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-secondary text-[10px] font-medium uppercase">WS</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">Illustrator</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-indigo-600 flex items-center justify-center text-[10px] font-bold text-on-secondary">CC</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Creative Col.</span>
+</div>
+</div>
+<span class="status-pill bg-tertiary-container/20 text-tertiary">Abierto</span>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="tech-note glass-panel p-stack-lg rounded-xl flex flex-col h-full min-h-[380px]" data-category="Emprendimiento">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] text-tertiary font-bold uppercase tracking-widest mb-1 block">Emprendimiento</span>
+<h3 class="font-headline-md text-white">FinMind</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-[20px]">psychology</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                    Inteligencia artificial para la alfabetización financiera dirigida a jóvenes emprendedores.
+                </p>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-tertiary text-[10px] font-medium uppercase">NLP</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-tertiary text-[10px] font-medium uppercase">Vue.js</span>
+</div>
+<div class="bg-white/5 p-3 rounded-lg border border-white/5">
+<p class="text-[11px] text-outline uppercase font-bold mb-1">Perfiles buscados</p>
+<p class="text-sm text-on-surface">Content Writer</p>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-tertiary to-teal-700 flex items-center justify-center text-[10px] font-bold text-on-tertiary">SH</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline font-bold uppercase">Líder</span>
+<span class="text-xs text-on-surface">Startup Hub</span>
+</div>
+</div>
+<span class="status-pill bg-primary-container/20 text-primary">En desarrollo</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="mt-margin-lg text-center">
+<button class="px-10 py-4 rounded-xl border border-primary/20 text-primary-fixed-dim font-bold hover:bg-primary/5 transition-all flex items-center gap-2 mx-auto group backdrop-blur-sm">
+                Sincronizar más datos
+                <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">keyboard_double_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 py-margin-lg mt-margin-lg relative">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-lg gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined">hub</span>
+                    NEXO
+                </span>
+<p class="text-[12px] text-outline uppercase tracking-widest">© 2024 Protocolo Nexo. Engineered for innovation.</p>
+</div>
+<div class="flex gap-margin-md">
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest font-bold" href="#">Privacy</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest font-bold" href="#">Terms</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest font-bold" href="#">Network</a>
+</div>
+<div class="flex gap-stack-md">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center glass-panel border border-white/10 hover:border-primary/50 text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center glass-panel border border-white/10 hover:border-primary/50 text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">language</span>
+</button>
+</div>
+</div>
+</footer>
+<script>
+        // Filter Toggle Logic
+        const filterButtons = document.querySelectorAll('#category-filters button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        menuToggle.addEventListener('click', () => {
+            // Simple visual feedback
+            menuToggle.classList.toggle('text-white');
+        });
+    </script>
+</body></html>
